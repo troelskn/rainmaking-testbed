@@ -118,7 +118,8 @@ body {
     text-decoration:none;
 }
 
-.list-item:active{
+.list-item.active-link,
+.list-item:active {
     color:#fff;
     background-color:#0099ff;
 }

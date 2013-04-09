@@ -38,7 +38,7 @@ var App = {
     bindEvents: function() {
         //document.addEventListener('deviceready', function() { App.onDeviceReady(); }, false);
         document.addEventListener('DOMContentLoaded', function() { App.onDeviceReady(); }, false);
-        $("#master").delegate('.list-item', 'click', function() { App.showPage("details"); });
+        $("#master").delegate('.list-item', 'click', function() { $(this).addClass("active-link"); App.showPage("details"); });
         $("#show-master").click(function() { App.showPage("master"); });
     },
     // deviceready Event Handler
@@ -51,6 +51,7 @@ var App = {
         current.addClass("offload");
         setTimeout(function() {
             current.removeClass("visible").removeClass("offload");
+            current.find(".active-link").removeClass("active-link");
         }, 500);
         $("#" + id).addClass("visible");
     }
