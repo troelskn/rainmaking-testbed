@@ -73,6 +73,12 @@ body {
     display:block;
 }
 
+.page.offload {
+    position:relative;
+    left:-100%;
+    -webkit-transition: all .5s linear;
+}
+
 .layout {
     display:table;
     height:100%;

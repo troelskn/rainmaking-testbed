@@ -47,7 +47,11 @@ var App = {
     },
     showPage: function(id) {
         $("#title").text(id);
-        $(".page.visible").filter(function(e) { return e.id != id; }).removeClass("visible");
+        var current = $(".page.visible").filter(function(e) { return e.id != id; });
+        current.addClass("offload");
+        setTimeout(function() {
+            current.removeClass("visible").removeClass("offload");
+        }, 500);
         $("#" + id).addClass("visible");
     }
 };
